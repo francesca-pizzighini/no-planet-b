@@ -1,15 +1,13 @@
 <a id="top"></a>
 
-# Vegetarian cuisine
+# There is no planet B
 
-Discover new vegetarian and vegan recipes everyday! We have houndreds of healthy and delicious recipes from various cuisine, and you can display only the ones you are interested in. We also have a selector to only show gluten-free recipes AND one for vegan recipes, come and discover your next meal!
+Since half of 20th century scientists are warning us that human activity is interfering with normal climate change of the planet, and we still haven't done anithing drastic to change things. We put information togheter to help clarifying the situation for everyone who still have doubts. Navigating the different pages to see data about the variation in temparature, carbon dioxide, methane and nitrous oxide concentration in the air, polar ice situation and ocean temperature. We hope this will help in sensitize people to act, and to vote for someone who'll care for our future.
 <br>
 <br>
-Try the website <a href= "https://foodie-veggie.netlify.app">here</a>.
+Try the website <a href= "https://there-is-no-planet-b.netlify.app">here</a>.
 <br>
 Or continue reading about the project <a href= "#the-project">here</a>.
-
-<img src="https://i.pinimg.com/736x/85/c8/90/85c890c1cd0f88c54e555bc82544fde5.jpg" alt="this image is a screenshot of the website">
 
 <details>
     <summary>Index</summary>
@@ -36,8 +34,8 @@ Or continue reading about the project <a href= "#the-project">here</a>.
         </li>
         <!--  -->
         <li>
-            <a href="#download-it-yourself">Download it yourself</a>
             <ul>
+            <a href="#download-it-yourself">Download it yourself</a>
                 <li><a href="#git-clone">Git Clone</a></li>
                 <li><a href="#install">Install</a></li>
                 <li><a href="#open-the-project">Open the project</a></li>
@@ -47,56 +45,47 @@ Or continue reading about the project <a href= "#the-project">here</a>.
         <li>
             <a href="#a-quick-guide-to-use">A quick guide to use</a>
             <ul>
-                <li><a href="#home-page">Search for the city</a></li>
-                <li><a href="#search-a-specific-recipe">Search a specific recipe</a></li>
-                <li><a href="#about-page">About page</a></li>
+                <li><a href="#home-page">Home page</a></li>
+                <li><a href="#search-a-specific-recipe">Light/Dark mode</a></li>
             </ul>
         </li>
         <!--  -->
         <li><a href="#contacts">Contacts</a></li>
     </ol>
+
 </details>
 
 ## The project
 
-This project is part of my journey in learning to code with [Start2Impact University](https://www.start2impact.it). This is my project to prove my knowledge about React.
+This project is the last part of my journey in learning to code with [Start2Impact University](https://www.start2impact.it). This is my final project for the front-end developer course.
 <br>
 Created in 2024.
 
 ### Prerequisite
 
-The assignment for this project was to built a website for vegetarian people to help them find new recipes. It was required a searchbar to find only the vegetarian recipes in the API, and clicking on the single recipe will open a new page with information about the specific dish.
-<br>
-All the information were provided by [Spoonacular API](https://spoonacular.com/food-api/docs).
+The assignment for this project is to build a multi-page website to show data about climate change in charts. I decide to dedicate a page for each topic: carbon dioxide, methane and nitrous oxide concentration in the air, global temperature, polar ice condition and ocean temperature.
+All the data were provided by [Global Warming and Climate Change API](https://global-warming.org).
 
 ### Technical requisite
 
-- Using React
-- Implementing a searchbar which search in all vegetarian recipes, and only them. Reading carefully the documentation of the API was required for this
-- Every recipe needs to show name and image of the dish
-- Every recipe is clickable and redirect to a specific page where you can see more details about that dish
-- Responsive designe
-- Organized project structure
+- Create a functioning webApp
+- Interact with [API](https://global-warming.org)
 - UX and UI easy to use
 - Write a README file
+- Responsive designe
+- Organized project structure
+- Show charts with any library preferred
 
-Every addictional feature is welcome, especially:
+<br>
+Every addictional feature is welcome.
 
-- React Redux
-- React Hooks
-- Axios
-- React Router
-- Context API
 <p align="right"><a href="#top">return to the top</a></p>
 
 ## Design inspiration
 
-I'm not a good graphic designer, so part of my preparatory work consist of search for inspirational works. For this project I don't have a specific source, but i browsed Pinterest in search for inspiration.
-I would cite:
+I'm not a good graphic designer, so part of my preparatory work consist of search for inspirational works. For this project I wold like to cite:
 
-- This [layout](https://www.pinterest.it/pin/655836764512991222/) for the design of the navbar
-- This [layout](https://www.pinterest.it/pin/647040671491364971/) fot the website design
-- [Canva](https://www.canva.com) for the logo design
+- [this](https://www.pinterest.it/pin/925278685929599423/) National Geographic layout i found on [Pinterest](https://www.pinterest.it) -[this](https://www.pngwing.com/en/free-png-mahnk) website for the transparent favicon
 
 <p align="right"><a href="#top">return to the top</a></p>
 
@@ -115,13 +104,12 @@ To developed this website I used:
 
 ### Libraries
 
-- [Axios](https://axios-http.com/)
 - [Redux](https://react-redux.js.org)
 - [React routing](https://reactrouter.com/en/main)
 
 ### Free API
 
-- [Spoonacular API](https://spoonacular.com/food-api/docs)
+- [Global Warming and Climate Change API](https://global-warming.org)
 
 <p align="right"><a href="#top">return to the top</a></p>
 
@@ -133,7 +121,7 @@ After the installation open the terminal in your computer and make sure you are 
 ### Git clone
 
 Type in the terminal
-`git clone https://github.com/francesca-pizzighini/foodie.git`
+`git clone https://github.com/francesca-pizzighini/no-planet-b.git`
 Then open the project folder in your code editor and make sure the terminal is now indicating this folder.
 
 ### Install
@@ -152,22 +140,16 @@ Type in the terminal
 ## A quick guide to use
 
 The website is really simple to use, but I'll illustrate how the pages works to make everything even clearer.<br>
-First of all open the website [here](https://foodie-veggie.netlify.app).
+First of all open the website [here](https://there-is-no-planet-b.netlify.app).
+<br>
 
-### Home Page
+### Home page
 
-In the homepage will randomly appear 3 vegetarian recipes everytime the page is loaded. This is for everyone who needs inspiration to find the right recipe, or just want a little caos in their life. <br>
-Every recipe shows name, image and specify if is vegan or gluten free. I thought it wuold be useful fo everyone who need to know those specification and can't use a selector as in recipes page.
+You'll than see the home page where you can click one of the links on the bottom of the page to see a graph for every main topic: carbon dioxide, methane and nitrous oxide concentration in the air, global temperature, polar ice condition and ocean temperature. Every page is designed to be easy to understand for everyone who could see it. At the top there is a chart indicating the data we are talking about, and right below that there is a short description of the data and why it is important to keep monitoring them.
 
-### Search a specific recipe
+### Light/dark mode
 
-Here in the page dedicated to recipes the user has parameters to direct the research to what exatly they need. <br>
-The research won't start until the user press the search button near the searchbar, so they can select if they need the recipe to be gluten free, vegan, if they want to search for a particular cuisine and if they want to search for a specific word in the recipe. <br>
-And that's it. As i said it's super simple, the recipes will show up and the only thing the user have to do is click the recipe is interested in to see in details ingredients and instruction to cook the dish!
-
-### About page
-
-The last page is simply dedicated to introduce an hypothetical society who decided to create this website. I thought that if I was the one interested to sensitize people to eat less meat i wuold like to introduce myself and my motivation. I think in this kind of project is important to make sure users know they are supported in their journey to eat better, that is not always easy.
+In every page there is also a switcher to change the view from light to dark mode, just to make sure to provide the best experience to everyone who wants to be informed on climate changes.
 
 <p align="right"><a href="#top">return to the top</a></p>
 
