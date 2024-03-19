@@ -4,4 +4,75 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Noto Sans Lao Looped", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: $light-color;
+}
+
+body {
+  background-color: $dark-color;
+}
+
+.home{
+  height: 100dvh;
+  width: 100dvw;
+  background-image: url("https://images.unsplash.com/photo-1527482937786-6608f6e14c15?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center center;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .home-title{
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 100px;
+    margin-left: 25px;
+    width: 250px;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      background-color: $yellow;
+      color: $light-color;
+      padding: 0px 10px 5px 20px;
+    }
+  }
+}
+.home .navbar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  grid-auto-columns: minmax(140px, auto);
+  margin: 0px 30px 30px;
+
+  a {
+    text-decoration: none;
+    color: $yellow;
+    font-size: 1.3rem;
+    font-weight: 300;
+    border: 2px solid $yellow;
+    padding: 5px 10px;
+  }
+  a:hover{
+    background-color: $yellow;
+    color: $dark-color;
+    font-weight: 300;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 899px) {
+  .home .navbar {
+    grid-template-columns: repeat(3, 1fr)
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width:1499px) {
+  .home .navbar {
+    grid-template-columns: repeat(6, 1fr)
+  }
 }
