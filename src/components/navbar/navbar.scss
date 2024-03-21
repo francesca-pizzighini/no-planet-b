@@ -2,9 +2,7 @@
 
 .navbar {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
     grid-auto-columns: minmax(140px, auto);
-    grid-template-rows: repeat(1, 1fr);
     gap: 10px;
 
     a {
@@ -30,35 +28,6 @@
             background-color: $yellow;
             color: $dark-color;
             font-weight: 400;
-        }
-    }
-}
-
-.chart-pages{
-    .side{
-        .upper-side{
-            height: 80px;
-            margin-top: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-
-            img{
-                height: 70px;
-            }
-        }
-        .navbar{
-            margin-top: 50px;
-            grid-template-columns: repeat(1, 1fr);
-            grid-auto-columns: minmax(140px, auto);
-            grid-template-rows: repeat(6, 1fr);
-            gap:0px;
-
-            a{
-                div{
-                    border: none;
-                }
-            }
         }
     }
 }
