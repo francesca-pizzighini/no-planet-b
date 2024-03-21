@@ -1,0 +1,33 @@
+@import "../../variables.scss";
+
+.navbar {
+    display: grid;
+    grid-auto-columns: minmax(140px, auto);
+    gap: 10px;
+
+    a {
+        text-decoration: none;
+        color: $yellow;
+        font-size: 1.1rem;
+        font-weight: 300;
+        text-align: center;
+
+        div {
+            border: 2px solid $yellow;
+            height: 75px;
+            line-height: 1.2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $light-color;
+        }
+    }
+
+    a:hover {
+        div {
+            background-color: $yellow;
+            color: $dark-color;
+            font-weight: 400;
+        }
+    }
+}

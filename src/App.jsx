@@ -1,4 +1,5 @@
-import Navbar from './components/navbar'
+import Navbar from './components/navbar/navbar.jsx'
+import "./app.scss"
 
 function App() {
 
@@ -7,10 +8,14 @@ function App() {
       className="home"
     >
       <div 
-        className='home-title'
+        className="home-title"
       >
-        <h2>There is no</h2>
-        <h2>planet B</h2>
+        <h2 
+          className="first-row"
+        >There is no</h2>
+        <h2
+          className='second-row'
+        >planet B</h2>
       </div>
 
       <Navbar/>
