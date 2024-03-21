@@ -1,0 +1,20 @@
+@import "../../variables.scss";
+
+.chart-pages {
+    display: flex;
+
+    .side {
+        height: 100dvh;
+        width: 25dvw;
+        background-color: $dark-color;
+        display: flex;
+        flex-direction: column;
+        // display: none;
+    }
+
+    .chart {
+        height: 100dvh;
+        width: 75dvw;
+        background-color: $darker-color;
+    }
+}

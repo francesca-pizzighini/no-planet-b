@@ -1,0 +1,64 @@
+@import "../../variables.scss";
+
+.navbar {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-columns: minmax(140px, auto);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 10px;
+
+    a {
+        text-decoration: none;
+        color: $yellow;
+        font-size: 1.1rem;
+        font-weight: 300;
+        text-align: center;
+
+        div {
+            border: 2px solid $yellow;
+            height: 75px;
+            line-height: 1.2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $light-color;
+        }
+    }
+
+    a:hover {
+        div {
+            background-color: $yellow;
+            color: $dark-color;
+            font-weight: 400;
+        }
+    }
+}
+
+.chart-pages{
+    .side{
+        .upper-side{
+            height: 80px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            img{
+                height: 70px;
+            }
+        }
+        .navbar{
+            margin-top: 50px;
+            grid-template-columns: repeat(1, 1fr);
+            grid-auto-columns: minmax(140px, auto);
+            grid-template-rows: repeat(6, 1fr);
+            gap:0px;
+
+            a{
+                div{
+                    border: none;
+                }
+            }
+        }
+    }
+}
