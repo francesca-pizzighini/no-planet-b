@@ -4,7 +4,7 @@ import "./chartPage.scss";
 import logo from "../../assets/img/logo.png";
 import Navbar from "../../components/navbar/navbar";
 import { useState } from "react";
-import hamburger from "../../assets/img/hamburgher.png";
+import hamburger from "../../assets/img/hamburger.png";
 
 function ChartPage() {
   const [visibleMenu, setVisibleMenu] = useState(false)
