@@ -9,13 +9,19 @@ import TogglerDarkMode from "../../components/togglerDarkMode/togglerDarkMode";
 
 function ChartPage() {
   const [visibleMenu, setVisibleMenu] = useState(false)
-  const [darkMode, setDarkMode] = useState(true)
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedDarkMode = localStorage.getItem('darkMode');
+    return savedDarkMode ? JSON.parse(savedDarkMode) : true;
+  });
+
   
   function showMenu() {
     setVisibleMenu(prevVisibleMenu => !prevVisibleMenu);
   }
   function toggleDarkMode() {
-    setDarkMode(prevDarkMode => !prevDarkMode)
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    localStorage.setItem('darkMode', JSON.stringify(newDarkMode));
   }
 
   return (
