@@ -1,0 +1,47 @@
+@import "../../variables.scss";
+
+.chart-pages{
+    .toggler {
+        display: flex;
+        align-items: center;
+
+        .moon{
+            color: $light-color;
+        }
+        .sun{
+            color: $dark-color;
+        }
+
+        .toggler-slider {
+            width: 25px;
+            height: 13px;
+            background-color: $dark-color;
+            border-radius: 2rem;
+            margin-inline: 7px;
+            cursor: pointer;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border: 1px solid $light-color;
+            background-color: $greyish-color;
+            box-sizing: content-box;
+
+            .toggler-slider-circle {
+                height: 13px;
+                width: 13px;
+                background-color: $yellow;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+.chart-pages.dark {
+    .toggler {
+        .toggler-slider{
+            justify-content: flex-end;
+            border-color: $light-color;
+            background-color: $darker-color;
+        }
+    }
+}

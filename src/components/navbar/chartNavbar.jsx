@@ -1,41 +1,30 @@
 import logo from "../../assets/img/logo.png";
 import { Link } from "react-router-dom";
 import Navbar from "./navbar.jsx";
+import TogglerDarkMode from "../togglerDarkMode/togglerDarkMode.jsx";
 
 import "./navbar.scss"
 
-function ChartNavbar() {
+function ChartNavbar({ darkMode, toggleDarkMode}) {
   return (
       <>
         <div className="upper-side">
           <Link to={"/"}>
             <img src={logo} alt="logo, with a link to homepage"/>
           </Link>
-          <p>light/dark</p>
+          
+          <TogglerDarkMode
+            darkMode={darkMode}
+            toggleDarkMode={toggleDarkMode}
+          />
+
         </div>
 
-        <Navbar/>
+        <Navbar
+          darkMode={darkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
       </>
-
-
-
-
-    // <div 
-    //     className="chart-navbar"
-    // >
-    //   <Link to={"/"}>
-    //     <img
-    //         src={logoFull}
-    //         alt="logo of the website"
-    //     />
-    //   </Link>
-
-    //   <Navbar/>
-
-    //   <div className="light-dark">
-    //     light/dark
-    //   </div>
-    // </div>
   )  
 }
 

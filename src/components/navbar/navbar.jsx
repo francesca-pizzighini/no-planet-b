@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
 import "./navbar.scss";
 
-function Navbar() {
+
+function Navbar({ darkMode, toggleDarkMode}) {
     const navLinkStyle =  ({ isActive }) => {
         return {
-            backgroundColor: isActive ? "#000" : "#1F1F1F",
-            color: isActive ? "#1F1F1F" : "#EAECEC",
+            backgroundColor: isActive ? (darkMode ? "#000" : "#EAECEC" ) : (darkMode ? "#1F1F1F" : "#D6D6D6"),
+            color: isActive ? (darkMode ? "#EAECEC" : "#1F1F1F") : (darkMode ? "#EAECEC" :"#1F1F1F"),
         }
     }
 

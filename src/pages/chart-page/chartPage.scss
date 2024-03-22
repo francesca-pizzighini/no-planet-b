@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    background-color: $greyish-color;
 
     .upper-bar {
         height: 10dvh;
@@ -20,7 +21,7 @@
             }
         }
     
-        .light-dark {
+        .toggler {
             margin-right: 30px;
         }
     }
@@ -56,25 +57,28 @@
                 gap: 0px;
                 grid-template-columns: repeat(1, 1fr);
                 grid-template-rows: repeat(6, 1fr);
-                // border: 1px solid $yellow;
                 width: 300px;
                 position: relative;
-                z-index: 0;
 
                 a {
                     div {
                         border: none;
                         height: 45px;
                         width: 300px;
+                        color: $dark-color;
+                    }
+                }
+                a:hover {
+                    div {
+                        background-color: $yellow;
+                        color: $light-color;
                     }
                 }
             }
         }
 
     }
-    // .circle-menu:hover {
-    //     background-color: $dark-yellow;
-    // }
+
 
 
     .side {
@@ -111,8 +115,42 @@
     .chart {
         height: 90dvh;
         width: 100dvw;
-        background-color: $darker-color;
+        background-color: $light-color;
+        
+        div{
+            color: $dark-color;
+        }
     }   
+}
+
+.chart-pages.dark{
+    background-color: $dark-color;
+
+    .circle-menu{
+        .circle-menu-navbar {
+            .navbar{
+                a {
+                    div{
+                        color: $light-color;
+                    }
+                }
+                a:hover {
+                    div {
+                        background-color: $yellow;
+                        color: $light-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .chart{
+        background-color: $darker-color;
+
+        div{
+            color: $light-color;
+        }
+    }
 }
 
 
@@ -140,7 +178,7 @@
         .side {
             height: 100dvh;
             width: 25dvw;
-            background-color: $dark-color;
+            background-color: $greyish-color;
             display: flex;
             flex-direction: column;
 
@@ -166,6 +204,7 @@
                 a {
                     div {
                         border: none;
+                        color: $dark-color;
                     }
                 }
             }
@@ -174,6 +213,23 @@
         .chart {
             height: 100dvh;
             width: 75dvw;
+            background-color: $light-color;
+        }
+    }
+    .chart-pages.dark {
+        .side {
+            background-color: $dark-color;
+
+            .navbar {
+                a {
+                    div {
+                        color: $light-color;
+                    }
+                }
+            }
+        }
+
+        .chart {
             background-color: $darker-color;
         }
     }
