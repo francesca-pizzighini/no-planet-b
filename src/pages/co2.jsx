@@ -15,7 +15,7 @@ function Co2() {
   console.log(co2)
 
   return (
-    <div>co2 page</div>
+    <div>co2 page. versione dev</div>
   )
 }
 
