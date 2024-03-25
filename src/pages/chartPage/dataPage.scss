@@ -113,31 +113,10 @@
     }
 
     .chart {
-        // min-height: 90dvh;
-        // width: 100dvw;
         background-color: $light-color;
-        
-        // div{
-        //     .chart-graph {
-        //         background-color: $yellow;
-        //         width: calc(100% - 60px);
-        //         height: 300px;
-        //         margin: 60px auto 30px;
-        //     }
-
-        //     h2{
-        //         color: $dark-color;
-        //         font-size: 3rem;
-        //         margin: 30px auto;
-        //         padding: 0px 30px;
-        //     }
-        //     p{
-        //         color: $dark-color;
-        //         font-size: 1.2rem;
-        //         margin: 30px auto;
-        //         padding: 0px 30px 60px;
-        //     }
-        // }
+        height: 90dvh;
+        overflow: scroll;
+        width: 100dvw;
     }   
 }
 
@@ -164,15 +143,6 @@
 
     .chart{
         background-color: $darker-color;
-
-        // div{
-        //     h2 {
-        //         color: $light-color !important;
-        //     }
-        //     p {
-        //         color: $light-color;
-        //     }
-        // }
     }
 }
 
@@ -237,12 +207,6 @@
             min-height: 100dvh;
             width: 75dvw;
             background-color: $light-color;
-
-            // div {
-            //     h2 {
-            //         font-size: 4rem;
-            //     }
-            // }
         }
     }
     .chart-pages.dark {

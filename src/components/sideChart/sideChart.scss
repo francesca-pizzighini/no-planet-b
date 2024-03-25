@@ -2,10 +2,8 @@
 
 .chart-pages {
     .chart {
-        min-height: 90dvh;
-        width: 100dvw;
-
         div {
+            margin-bottom: 60px;
             .chart-graph {
                 background-color: $yellow;
                 width: calc(100% - 60px);
@@ -24,7 +22,22 @@
                 color: $dark-color;
                 font-size: 1.2rem;
                 margin: 30px auto;
-                padding: 0px 30px 60px;
+                padding: 0px 30px;
+            }
+            span {
+                color: $dark-color;
+                font-size: 0.8rem;
+                margin: 30px auto;
+                padding: 0px 30px;
+                
+                a {
+                    color: $dark-color;
+                    font-weight: 600;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -39,6 +52,13 @@
     
             p {
                 color: $light-color;
+            }
+            span {
+                color: $light-color;
+
+                a {
+                    color: $light-color;
+                }
             }
         }
     }

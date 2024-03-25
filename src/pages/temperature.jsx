@@ -33,16 +33,27 @@ function Temperature() {
 
       <SideChart
         title="Temperature"
-        description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id sint tenetur voluptas iure porro repellat sit assumenda natus reiciendis, recusandae debitis voluptatem facilis hic deleniti mollitia a adipisci facere quod deserunt laboriosam nihil! Blanditiis, quasi fugit ea totam mollitia provident et dolore pariatur adipisci explicabo suscipit possimus, doloremque, assumenda fugiat dolorem dolores? Officia quis, deleniti quam asperiores repellendus accusantium reiciendis doloribus veritatis, quisquam rerum debitis distinctio obcaecati. Magnam necessitatibus, porro beatae quas nihil amet exercitationem nulla repellendus voluptatem consequuntur eos modi nam soluta cumque ab dolores fuga velit impedit. Iste atque quis voluptatem non. Doloribus provident suscipit fugit maxime architecto!"
+        description="The rising of the temperature we have witnessed in the last century is not natural and in recent decades the issue of rising temperatures has escalated into a pressing concern on a global scale. Even thought the rising has not been uniform across the planet, the Earth's climate is undergoing unprecedented changes, with profound implications for ecosystems, economies, and human well-being. The phenomenon of global warming, driven predominantly by human activities, has led to a discernible increase in average temperatures across the planet. According to data compiled by reputable scientific organizations such as NASA and the National Oceanic and Atmospheric Administration (NOAA), the Earth's average surface temperature has risen by approximately 1.2 degrees Celsius (2.2 degrees Fahrenheit) since the late 19th century. 
+        To be more specific, according to NOAA’s 2023 Annual Climate report the combined land and ocean temperature from 1850 to 1981 has increased at an average rate of 0.06° Celsius (0.11° Fahrenheit) per decade. The rate of warming since 1982 is more than three times as fast: 0.36° F (0.20° C) per decade.
+        This may seem like a modest increment, but its repercussions are far-reaching, manifested in the intensification of heatwaves, the melting of polar ice caps, and disruptions to weather patterns. 
+        Another alarming aspect to keep under control is the warming trend observed in the human body. Studies conducted by medical professionals and researchers indicate a notable rise in body temperatures among individuals across various demographics, raising concerns about the potential health consequences and highlighting the intricate interplay between global climate change and human physiology."
+        url="https://www.climate.gov/news-features/understanding-climate/climate-change-global-temperature"
+        website="www.climate.gov"
       />
+      
 
-      {loadingState.loading && (<div>loading</div>)}
+
+
+
+
+
+      {/* {loadingState.loading && (<div>loading</div>)}
 
       {!loadingState.loading && loadingState.error ? <div>{loadingState.error}</div> : null}
 
       {!loadingState.loading && temperature.map(temp => (
         <p>{temp.time}</p>
-      ))}
+      ))} */}
     </div>
   )
 }
