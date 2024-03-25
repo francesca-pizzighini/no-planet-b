@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCo2 } from "../features/co2/co2FetchingSlice";
-import ChartNavbar from "../components/navbar/chartNavbar.jsx";
-import ChartPage from "./chart-page/chartPage.jsx";
+
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import SideChart from "../components/sideChart";
 
 function Co2() {
   const co2 = useSelector(state => state.co2.co2)
@@ -31,7 +31,12 @@ function Co2() {
         </Helmet>
       </HelmetProvider>
 
-      co2 page</div>
+      <SideChart
+        title="Carbon dioxide"
+        description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id sint tenetur voluptas iure porro repellat sit assumenda natus reiciendis, recusandae debitis voluptatem facilis hic deleniti mollitia a adipisci facere quod deserunt laboriosam nihil! Blanditiis, quasi fugit ea totam mollitia provident et dolore pariatur adipisci explicabo suscipit possimus, doloremque, assumenda fugiat dolorem dolores? Officia quis, deleniti quam asperiores repellendus accusantium reiciendis doloribus veritatis, quisquam rerum debitis distinctio obcaecati. Magnam necessitatibus, porro beatae quas nihil amet exercitationem nulla repellendus voluptatem consequuntur eos modi nam soluta cumque ab dolores fuga velit impedit. Iste atque quis voluptatem non. Doloribus provident suscipit fugit maxime architecto!"
+      />
+
+    </div>
   )
 }
 

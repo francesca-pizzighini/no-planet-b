@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchNo2 } from "../features/no2/no2FetchingSlice";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import SideChart from "../components/sideChart";
 
 function No2() {
   const no2 = useSelector(state => state.no2.no2)
@@ -28,7 +29,12 @@ function No2() {
           ></meta>
         </Helmet>
       </HelmetProvider>
-      no2 page
+      
+      <SideChart
+        title="Nitrous Oxide"
+        description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id sint tenetur voluptas iure porro repellat sit assumenda natus reiciendis, recusandae debitis voluptatem facilis hic deleniti mollitia a adipisci facere quod deserunt laboriosam nihil! Blanditiis, quasi fugit ea totam mollitia provident et dolore pariatur adipisci explicabo suscipit possimus, doloremque, assumenda fugiat dolorem dolores? Officia quis, deleniti quam asperiores repellendus accusantium reiciendis doloribus veritatis, quisquam rerum debitis distinctio obcaecati. Magnam necessitatibus, porro beatae quas nihil amet exercitationem nulla repellendus voluptatem consequuntur eos modi nam soluta cumque ab dolores fuga velit impedit. Iste atque quis voluptatem non. Doloribus provident suscipit fugit maxime architecto!"
+      />
+
     </div>
   )
 }

@@ -15,7 +15,7 @@ import No2 from "./pages/no2.jsx"
 import PolarIce from "./pages/polarIce.jsx"
 import OceanWarming from "./pages/oceanWarming.jsx"
 import ErrorPage from "./pages/errorPage.jsx"
-import ChartPage from './pages/chart-page/chartPage.jsx'
+import ChartPage from './pages/chartPage.jsx'
 
 const router = createBrowserRouter([
   {
