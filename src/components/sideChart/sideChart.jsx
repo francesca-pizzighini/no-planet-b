@@ -1,3 +1,5 @@
+import "./sideChart.scss"
+
 function SideChart({ title, description }) {
   return (
     <>

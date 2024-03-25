@@ -1,11 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
-import ChartNavbar from "../components/navbar/chartNavbar";
+import ChartNavbar from "../../components/navbar/chartNavbar";
 import "./dataPage.scss";
-import logo from "../assets/img/logo.png";
-import Navbar from "../components/navbar/navbar";
+import logo from "../../assets/img/logo.png";
+import Navbar from "../../components/navbar/navbar";
 import { useState } from "react";
-import hamburger from "../assets/img/hamburger.png";
-import TogglerDarkMode from "../components/togglerDarkMode/togglerDarkMode";
+import hamburger from "../../assets/img/hamburger.png";
+import TogglerDarkMode from "../../components/togglerDarkMode/togglerDarkMode";
 
 function ChartPage() {
   const [visibleMenu, setVisibleMenu] = useState(false)

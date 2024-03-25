@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTemperature } from "../features/temperature/temperatureFetchingSlice";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import SideChart from "../components/sideChart";
+import SideChart from "../components/sideChart/sideChart";
 
 function Temperature() {
   const temperature = useSelector(state => state.temperature.temperature)

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPolarIce } from "../features/polarIce/polarIceFetchingSlice";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import SideChart from "../components/sideChart";
+import SideChart from "../components/sideChart/sideChart";
 
 function PolarIce() {
   const polarIceData = useSelector(state => state.polarIce.polarIceData);

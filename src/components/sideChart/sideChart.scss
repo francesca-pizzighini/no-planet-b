@@ -1,0 +1,58 @@
+@import "../../variables.scss";
+
+.chart-pages {
+    .chart {
+        min-height: 90dvh;
+        width: 100dvw;
+
+        div {
+            .chart-graph {
+                background-color: $yellow;
+                width: calc(100% - 60px);
+                height: 300px;
+                margin: 60px auto 30px;
+            }
+    
+            h2 {
+                color: $dark-color;
+                font-size: 3rem;
+                margin: 30px auto;
+                padding: 0px 30px;
+            }
+    
+            p {
+                color: $dark-color;
+                font-size: 1.2rem;
+                margin: 30px auto;
+                padding: 0px 30px 60px;
+            }
+        }
+    }
+}
+
+.chart-pages.dark {
+    .chart{
+        div {
+            h2 {
+                color: $light-color !important;
+            }
+    
+            p {
+                color: $light-color;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 700px) and (max-width: 1499px) {
+    .chart-pages{
+        .chart {
+            div {
+                h2 {
+                    font-size: 4rem;
+                }
+            }
+        }
+    }
+}

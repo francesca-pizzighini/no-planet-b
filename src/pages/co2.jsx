@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCo2 } from "../features/co2/co2FetchingSlice";
 
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import SideChart from "../components/sideChart";
+import SideChart from "../components/sideChart/sideChart";
 
 function Co2() {
   const co2 = useSelector(state => state.co2.co2)

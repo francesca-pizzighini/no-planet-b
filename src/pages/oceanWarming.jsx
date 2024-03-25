@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchOceanWarming } from "../features/oceanWarming/oceanWarmingFetchingSlice";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import SideChart from "../components/sideChart";
+import SideChart from "../components/sideChart/sideChart";
 
 function OceanWarming() {
   const oceanWarming = useSelector(state => state.oceanWarming.oceanWarming);
