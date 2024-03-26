@@ -3,34 +3,34 @@ import axios from "axios";
 
 const initialState = {
     loading: false,
-    no2: [],
+    n2o: [],
     error: "",
 };
 
-export const fetchNo2 = createAsyncThunk("no2/fetchNo2", () => {
+export const fetchN2o = createAsyncThunk("n2o/fetchN2o", () => {
     return axios.get("https://global-warming.org/api/nitrous-oxide-api")
         .then (response => response.data.nitrous)
 })
 
-const no2Slice = createSlice({
-    name: "no2",
+const n2oSlice = createSlice({
+    name: "n2o",
     initialState,
     extraReducers: (builder) => {
         builder
-        .addCase(fetchNo2.pending, (state) => {
+        .addCase(fetchN2o.pending, (state) => {
             state.loading = true;
         })
-        .addCase(fetchNo2.fulfilled, (state, action) => {
+        .addCase(fetchN2o.fulfilled, (state, action) => {
             state.loading = false;
-            state.no2 = action.payload;
+            state.n2o = action.payload;
             state.error = "";
         })
-        .addCase(fetchNo2.rejected, (state, action) => {
+        .addCase(fetchN2o.rejected, (state, action) => {
             state.loading = false;
-            state.no2 = [];
+            state.n2o = [];
             state.error = action.error.message;
         })
     },
 })
 
-export default no2Slice.reducer;
+export default n2oSlice.reducer;

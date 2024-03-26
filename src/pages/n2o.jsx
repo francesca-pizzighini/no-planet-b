@@ -1,18 +1,18 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchNo2 } from "../features/no2/no2FetchingSlice";
+import { fetchN2o } from "../features/n2o/n2oFetchingSlice";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import SideChart from "../components/sideChart/sideChart";
 
-function No2() {
-  const no2 = useSelector(state => state.no2.no2)
+function N2o() {
+  const n2o = useSelector(state => state.n2o.n2o)
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(fetchNo2())
+    dispatch(fetchN2o())
   }, [])
 
-  console.log(no2)
+  console.log(n2o)
 
   return (
     <div>
@@ -25,7 +25,7 @@ function No2() {
           ></meta>
           <meta 
             name="keywords" 
-            content="climate-change nitrous-oxide no2 act-now no2-graph no2-information no2-concentration-in-air nitrous-oxide-graph nitrous-oxide-information nitrous-oxide-concentration-in-air"
+            content="climate-change nitrous-oxide n2o act-now n2o-graph n2o-information n2o-concentration-in-air nitrous-oxide-graph nitrous-oxide-information nitrous-oxide-concentration-in-air"
           ></meta>
         </Helmet>
       </HelmetProvider>
@@ -33,10 +33,12 @@ function No2() {
       <SideChart
         title="Nitrous Oxide"
         description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id sint tenetur voluptas iure porro repellat sit assumenda natus reiciendis, recusandae debitis voluptatem facilis hic deleniti mollitia a adipisci facere quod deserunt laboriosam nihil! Blanditiis, quasi fugit ea totam mollitia provident et dolore pariatur adipisci explicabo suscipit possimus, doloremque, assumenda fugiat dolorem dolores? Officia quis, deleniti quam asperiores repellendus accusantium reiciendis doloribus veritatis, quisquam rerum debitis distinctio obcaecati. Magnam necessitatibus, porro beatae quas nihil amet exercitationem nulla repellendus voluptatem consequuntur eos modi nam soluta cumque ab dolores fuga velit impedit. Iste atque quis voluptatem non. Doloribus provident suscipit fugit maxime architecto!"
+        url="https://www.epa.gov/ghgemissions/overview-greenhouse-gases#nitrous-oxide"
+        website="www.epa.gov"
       />
 
     </div>
   )
 }
 
-export default No2;
+export default N2o;

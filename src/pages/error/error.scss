@@ -1,0 +1,150 @@
+@import "../../variables.scss";
+
+.error {
+    background-image: url("https://wallpapers.com/images/hd/blank-and-white-tornado-on-road-knjy5plcoro7vqmt.jpg");
+    background-size: cover;
+    background-position: center center;
+    width: 100dvw;
+    height: 100dvh;
+    padding-top: 30px;
+
+    div {
+        width: calc(100% - 60px);
+        margin: 0px auto;
+        padding: 60px 30px;
+        background-color: $greyish-color;
+
+        h2 {
+            color: $dark-color;
+            font-size: 2.7rem;
+        }
+    
+        p {
+            color: $dark-color;
+            font-size: 1.2rem;
+            font-weight: 300;
+            padding-top: 60px;
+    
+            a {
+                color: $dark-color;
+                text-decoration: none;
+                font-weight: 500;
+            }
+    
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.error.dark {
+    background-color: $dark-color;
+
+    div {
+        h2 {
+            color: $light-color;
+        }
+
+        p {
+            color: $light-color;
+
+            a {
+                color: $light-color;
+            }
+        }
+    }
+}
+
+
+.chart-pages{
+    .chart{
+        .error {
+            background-color: $light-color;
+            background-image: none;
+            height: 90dvh;
+            margin-bottom: 0;
+    
+            div {
+                background-color: $light-color;
+    
+                h2 {
+                    color: $dark-color;
+                    padding: 0px;
+                }
+    
+                p {
+                    color: $dark-color;
+    
+                    a {
+                        color: $dark-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.chart-pages.dark{
+    .error {
+        background-color: $dark-color;
+
+        div {
+            background-color: $dark-color;
+
+            h2 {
+                color: $light-color;
+                padding: 0px;
+            }
+            p {
+                color: $light-color;
+                
+                a{
+                    color: $light-color;
+                }
+            }
+        }
+    }
+}
+
+.chart {
+    .error.dark {
+        background-color: $dark-color;
+        background-image: none;
+        height: 90dvh;
+
+        div {
+            background-color: $dark-color;
+
+            h2 {
+                color: $light-color;
+                padding: 0px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1499px) {
+    .error{
+        div{
+            h2{
+                font-size: 4rem;
+            }
+            p{
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .chart-pages {
+        .chart{
+            .error {
+                height: 100dvh;
+                width: 75dvw;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

@@ -3,11 +3,16 @@ import "./sideChart.scss"
 function SideChart({ title, description, url, website }) {
   return (
     <>
+        <div id="top"></div>
         <div className="chart-graph" ></div>
 
         <h2>{title}</h2>
 
-        <p>{description}</p>
+        <div
+          dangerouslySetInnerHTML={{ __html: description}}
+          className="description"
+        >
+        </div>
 
         <span>To know more information you can visit <a href={url}>{website}</a> website</span>
     </>

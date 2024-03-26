@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./navbar.scss";
+import { HashLink } from "react-router-hash-link";
 
 
 function Navbar({ darkMode, toggleDarkMode}) {
