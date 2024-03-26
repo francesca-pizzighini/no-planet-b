@@ -14,7 +14,7 @@ function SideChart({ title, description, url, website }) {
         >
         </div>
 
-        <span>To know more information you can visit <a href={url}>{website}</a> website</span>
+        <span>To know more information you can visit <a target="_blank" href={url}>{website}</a> website</span>
     </>
   )
 }
