@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTemperature } from "../features/temperature/temperatureFetchingSlice";
 import { Helmet, HelmetProvider } from "react-helmet-async";
@@ -13,7 +13,59 @@ function Temperature() {
     dispatch(fetchTemperature())
   }, [])
 
-  console.log(temperature)
+  const [chartData, setChartData] = useState({
+    labels: [],
+    dataSets: [{
+      label: "Temperature",
+      data: [],
+    }],
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+    }, 
+  });
+
+  useEffect(() => {
+    if (temperature && temperature.length > 0) {
+      setChartData({
+        labels: temperature.map(temperatureData => {
+          const originalDate = temperatureData.time;
+          const datePlusDecimals = (originalDate + "").split(".");
+
+          if (datePlusDecimals[1] >= 0 && datePlusDecimals[1] < 9) {
+            return `${datePlusDecimals[0]} Jan`
+          } else if (datePlusDecimals[1] >=9 && datePlusDecimals[1] < 17) {
+            return `${datePlusDecimals[0]} Feb`
+          } else if (datePlusDecimals[1] >=17 && datePlusDecimals[1] < 25) {
+            return `${datePlusDecimals[0]} Mar`
+          } else if (datePlusDecimals[1] >=25 && datePlusDecimals[1] < 33) {
+            return `${datePlusDecimals[0]} Apr`
+          } else if (datePlusDecimals[1] >=33 && datePlusDecimals[1] < 42) {
+            return `${datePlusDecimals[0]} May`
+          } else if (datePlusDecimals[1] >=42 && datePlusDecimals[1] < 50) {
+            return `${datePlusDecimals[0]} Jun`
+          } else if (datePlusDecimals[1] >=50 && datePlusDecimals[1] < 59) {
+            return `${datePlusDecimals[0]} Jul`
+          } else if (datePlusDecimals[1] >=59 && datePlusDecimals[1] < 67) {
+            return `${datePlusDecimals[0]} Aug`
+          } else if (datePlusDecimals[1] >=67 && datePlusDecimals[1] < 75) {
+            return `${datePlusDecimals[0]} Sep`
+          } else if (datePlusDecimals[1] >=75 && datePlusDecimals[1] < 84) {
+            return `${datePlusDecimals[0]} Oct`
+          } else if (datePlusDecimals[1] >=84 && datePlusDecimals[1] < 92) {
+            return `${datePlusDecimals[0]} Nov`
+          } else if (datePlusDecimals[1] >=92 && datePlusDecimals[1] < 100) {
+            return `${datePlusDecimals[0]} Dec`
+          }
+        }),
+        dataSets: [{
+          label: "Temperature",
+          data: temperature.map(temperatureData => temperatureData.station),
+          backgroundColor: ["#FFCC01"],
+        }],
+      });
+    }
+  }, [temperature]);
 
   return (
     <div>
@@ -39,10 +91,11 @@ function Temperature() {
         Another alarming aspect to keep under control is the warming trend observed in the human body. Studies conducted by medical professionals and researchers indicate a notable rise in body temperatures among individuals across various demographics, raising concerns about the potential health consequences and highlighting the intricate interplay between global climate change and human physiology."
         url="https://www.climate.gov/news-features/understanding-climate/climate-change-global-temperature"
         website="www.climate.gov"
+        chartData={chartData}
+        caption="This data shows the oscillation of the average temperature from 1880 to the present. It is normal to see the value going up and down, but is clear how in the last 50 years the average world temperature is rising at an alarming rate, and studies shows that is caused by human activities."
+        loadingState={loadingState}
+        data={temperature}
       />
-      
-
-
 
 
 

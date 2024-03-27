@@ -1,0 +1,64 @@
+@import "../../variables.scss";
+
+.chart-pages{
+    .chart-graph {
+        .loading-icon {
+            width: 100px;
+            height: 100px;
+            margin-left: 50px;
+            animation: 2s linear 0s infinite rotation;
+        }
+
+        .caption {
+            color: $dark-color;
+            opacity: 0.3;
+            margin: 0;
+            padding: 0;
+        }
+
+        .error-message {
+            margin-bottom: 0;
+
+            h3{
+                color: $yellow;
+                font-size: 3rem;
+            }
+            p {
+                color: $dark-color;
+                opacity: 0.3;
+
+                a{
+                    color: $dark-color;
+                    text-decoration: none;
+                    font-weight: 700;
+                }
+                a:hover{
+                    text-decoration: underline;
+                }
+            }
+
+        }
+    }
+}
+
+.chart-pages.dark {
+    .chart-graph {
+        .caption {
+            color: $light-color;
+            opacity: 0.5;
+        }
+    }
+}
+
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+;
