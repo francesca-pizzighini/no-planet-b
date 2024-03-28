@@ -38,11 +38,11 @@ function Methane() {
           data: methane.map(methaneData => methaneData.average),
           backgroundColor: ["#FFCC01"],
           },
-          // {
-          // label: "Methane trend",
-          // data: methane.map(methaneData => methaneData.trend),
-          // backgroundColor: ["#2CA6A4"],
-          // },
+          {
+          label: "Methane trend",
+          data: methane.map(methaneData => methaneData.trend),
+          backgroundColor: ["#2CA6A4"],
+          },
 
       ],
       });

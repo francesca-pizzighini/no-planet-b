@@ -9,8 +9,6 @@ function LineChart({ chartData }) {
   };
   const options = chartData.options
 
-  // console.log(chartData)
-
   return (
     <>
         <Line 

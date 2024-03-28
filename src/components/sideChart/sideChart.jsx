@@ -4,8 +4,6 @@ import loadingIcon from "../../assets/img/load-icon.png"
 import LineChart from "../barChart/lineChart.jsx"
 
 function SideChart({ title, description, url, website, chartData, caption, loadingState, data, bar }) {
-  // console.log(chartData, caption, loadingState, data)
-  // console.log(data);
   return (
     <>
         <div id="top"></div>

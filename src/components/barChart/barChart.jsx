@@ -9,8 +9,6 @@ function BarChart({ chartData }) {
   };
   const options = chartData.options
 
-  // console.log(chartData)
-
   return (
     <>
         <Bar 

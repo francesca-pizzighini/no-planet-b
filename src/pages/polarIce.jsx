@@ -73,9 +73,6 @@ function PolarIce() {
     }    
   }, [labelArr, valueArr])
 
-  // console.log(labelArr)
-  // console.log(valueArr)
-
   return (
     <div>
       <HelmetProvider>

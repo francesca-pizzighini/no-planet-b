@@ -33,29 +33,29 @@ function Temperature() {
           const datePlusDecimals = (originalDate + "").split(".");
 
           if (datePlusDecimals[1] >= 0 && datePlusDecimals[1] < 9) {
-            return `${datePlusDecimals[0]} Jan`
+            return `${datePlusDecimals[0]}-01`
           } else if (datePlusDecimals[1] >=9 && datePlusDecimals[1] < 17) {
-            return `${datePlusDecimals[0]} Feb`
+            return `${datePlusDecimals[0]}-02`
           } else if (datePlusDecimals[1] >=17 && datePlusDecimals[1] < 25) {
-            return `${datePlusDecimals[0]} Mar`
+            return `${datePlusDecimals[0]}-03`
           } else if (datePlusDecimals[1] >=25 && datePlusDecimals[1] < 33) {
-            return `${datePlusDecimals[0]} Apr`
+            return `${datePlusDecimals[0]}-04`
           } else if (datePlusDecimals[1] >=33 && datePlusDecimals[1] < 42) {
-            return `${datePlusDecimals[0]} May`
+            return `${datePlusDecimals[0]}-05`
           } else if (datePlusDecimals[1] >=42 && datePlusDecimals[1] < 50) {
-            return `${datePlusDecimals[0]} Jun`
+            return `${datePlusDecimals[0]}-06`
           } else if (datePlusDecimals[1] >=50 && datePlusDecimals[1] < 59) {
-            return `${datePlusDecimals[0]} Jul`
+            return `${datePlusDecimals[0]}-07`
           } else if (datePlusDecimals[1] >=59 && datePlusDecimals[1] < 67) {
-            return `${datePlusDecimals[0]} Aug`
+            return `${datePlusDecimals[0]}-08`
           } else if (datePlusDecimals[1] >=67 && datePlusDecimals[1] < 75) {
-            return `${datePlusDecimals[0]} Sep`
+            return `${datePlusDecimals[0]}-09`
           } else if (datePlusDecimals[1] >=75 && datePlusDecimals[1] < 84) {
-            return `${datePlusDecimals[0]} Oct`
+            return `${datePlusDecimals[0]}-10`
           } else if (datePlusDecimals[1] >=84 && datePlusDecimals[1] < 92) {
-            return `${datePlusDecimals[0]} Nov`
+            return `${datePlusDecimals[0]}-11`
           } else if (datePlusDecimals[1] >=92 && datePlusDecimals[1] < 100) {
-            return `${datePlusDecimals[0]} Dec`
+            return `${datePlusDecimals[0]}-12`
           }
         }),
         dataSets: [
