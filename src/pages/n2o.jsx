@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchN2o } from "../features/n2o/n2oFetchingSlice";
 import { Helmet, HelmetProvider } from "react-helmet-async";
@@ -7,12 +7,46 @@ import SideChart from "../components/sideChart/sideChart";
 function N2o() {
   const n2o = useSelector(state => state.n2o.n2o)
   const dispatch = useDispatch()
+  const loadingState = useSelector(state => state.n2o)
 
   useEffect(() => {
     dispatch(fetchN2o())
   }, [])
 
-  console.log(n2o)
+  const [chartData, setChartData] = useState({
+    labels: [],
+    dataSets: [{
+      label: "Nitrous oxide",
+      data: [],
+    }],
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+    }, 
+  });
+
+  useEffect(() => {
+    if (n2o && n2o.length > 0) {
+      setChartData({
+        labels: n2o.map(n2oData => {
+          return n2oData.date
+        }),
+        dataSets: [
+          {
+          label: "N2O average",
+          data: n2o.map(n2oData => n2oData.average),
+          backgroundColor: ["#FFCC01"],
+          },
+          {
+          label: "N2O trend",
+          data: n2o.map(n2oData => n2oData.trend),
+          backgroundColor: ["#2CA6A4"],
+          },
+
+      ],
+      });
+    }
+  }, [n2o]);
 
   return (
     <div>
@@ -39,8 +73,12 @@ function N2o() {
         Furthermore, raising awareness about the environmental impact of N2O and its connection to climate change is crucial for fostering informed decision-making and driving policy changes. By integrating N2O mitigation strategies into broader climate action plans, we can work towards reducing our carbon footprint and mitigating the impacts of climate change."
         url="https://www.epa.gov/ghgemissions/overview-greenhouse-gases#nitrous-oxide"
         website="www.epa.gov"
+        chartData={chartData}
+        caption="caption of the graphic"
+        loadingState={loadingState}
+        data={n2o}
+        bar={false}
       />
-
     </div>
   )
 }

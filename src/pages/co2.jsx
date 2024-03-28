@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCo2 } from "../features/co2/co2FetchingSlice";
 
@@ -8,12 +8,46 @@ import SideChart from "../components/sideChart/sideChart";
 function Co2() {
   const co2 = useSelector(state => state.co2.co2)
   const dispatch = useDispatch()
+  const loadingState = useSelector(state => state.co2)
   
   useEffect(() => {
     dispatch(fetchCo2())
   }, [])
 
-  console.log(co2)
+  const [chartData, setChartData] = useState({
+    labels: [],
+    dataSets: [{
+      label: "Carbon dioxide",
+      data: [],
+    }],
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+    }, 
+  });
+
+  useEffect(() => {
+    if (co2 && co2.length > 0) {
+      setChartData({
+        labels: co2.map(co2Data => {
+          return `${co2Data.year}.${co2Data.day}.${co2Data.month}`
+        }),
+        dataSets: [
+          {
+          label: "CO2 cycle",
+          data: co2.map(co2Data => co2Data.cycle),
+          backgroundColor: ["#FFCC01"],
+          },
+          {
+          label: "CO2 trend",
+          data: co2.map(co2Data => co2Data.trend),
+          backgroundColor: ["#2CA6A4"],
+          },
+      ],
+      });
+    }
+  }, [co2]);
+
 
   return (
     <div>
@@ -41,6 +75,11 @@ function Co2() {
         Moreover we need to raise awareness about the consequences of elevated CO2 levels and foster a collective commitment to combatting climate change."
         url="https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide"
         website="www.climate.gov"
+        chartData={chartData}
+        caption="caption of the grapic"
+        loadingState={loadingState}
+        data={co2}
+        bar={false}
       />
 
     </div>

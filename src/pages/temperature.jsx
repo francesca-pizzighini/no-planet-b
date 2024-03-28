@@ -58,11 +58,18 @@ function Temperature() {
             return `${datePlusDecimals[0]} Dec`
           }
         }),
-        dataSets: [{
-          label: "Temperature",
+        dataSets: [
+        {
+          label: "Station temperature",
           data: temperature.map(temperatureData => temperatureData.station),
           backgroundColor: ["#FFCC01"],
-        }],
+        },
+        {
+          label: "Land temperature",
+          data: temperature.map(temperatureData => temperatureData.land),
+          backgroundColor: ["#2CA6A4"],
+        },
+      ],
       });
     }
   }, [temperature]);
@@ -95,18 +102,8 @@ function Temperature() {
         caption="This data shows the oscillation of the average temperature from 1880 to the present. It is normal to see the value going up and down, but is clear how in the last 50 years the average world temperature is rising at an alarming rate, and studies shows that is caused by human activities."
         loadingState={loadingState}
         data={temperature}
+        bar={true}
       />
-
-
-
-
-      {/* {loadingState.loading && (<div>loading</div>)}
-
-      {!loadingState.loading && loadingState.error ? <div>{loadingState.error}</div> : null}
-
-      {!loadingState.loading && temperature.map(temp => (
-        <p>{temp.time}</p>
-      ))} */}
     </div>
   )
 }

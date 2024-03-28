@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMethane } from "../features/methane/methaneFetchingSlice";
 import { Helmet, HelmetProvider } from "react-helmet-async";
@@ -7,12 +7,46 @@ import SideChart from "../components/sideChart/sideChart";
 function Methane() {
   const methane = useSelector(state => state.methane.methane)
   const dispatch = useDispatch();
+  const loadingState = useSelector(state => state.methane)
 
   useEffect(() => {
     dispatch(fetchMethane())
   }, [])
 
-  console.log(methane)
+  const [chartData, setChartData] = useState({
+    labels: [],
+    dataSets: [{
+      label: "Methane",
+      data: [],
+    }],
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+    }, 
+  });
+
+  useEffect(() => {
+    if (methane && methane.length > 0) {
+      setChartData({
+        labels: methane.map(methaneData => {
+          return methaneData.date
+        }),
+        dataSets: [
+          {
+          label: "Methane average",
+          data: methane.map(methaneData => methaneData.average),
+          backgroundColor: ["#FFCC01"],
+          },
+          // {
+          // label: "Methane trend",
+          // data: methane.map(methaneData => methaneData.trend),
+          // backgroundColor: ["#2CA6A4"],
+          // },
+
+      ],
+      });
+    }
+  }, [methane]);
 
   return (
     <div>
@@ -40,6 +74,11 @@ function Methane() {
         Furthermore, enhancing monitoring and surveillance of methane sources, investing in research and innovation for methane mitigation strategies, and fostering international cooperation are essential steps towards mitigating the impact of methane emissions on climate change."
         url="https://www.epa.gov/ghgemissions/overview-greenhouse-gases#methane"
         website="www.epa.gov"
+        chartData={chartData}
+        caption="caption of the graphic"
+        loadingState={loadingState}
+        data={methane}
+        bar={true}
       />
 
     </div>

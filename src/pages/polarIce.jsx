@@ -41,6 +41,11 @@ function PolarIce() {
         Addressing the distressing pace of polar ice melting requires urgent and concerted global action to mitigate climate change. This includes reducing greenhouse gas emissions, transitioning to renewable energy sources, and implementing policies to protect polar regions and vulnerable communities. Moreover, international cooperation and scientific research are essential for understanding the complex dynamics of polar ice melting and developing effective strategies for adaptation and resilience."
         url="https://www.npolar.no/en/themes/climate-change-in-the-arctic/"
         website="www.npolar.no"
+        chartData={chartData}
+        caption="caption of the graphic"
+        loadingState={loadingState}
+        data={polarIce}
+        bar={false}
       />
 
     </div>

@@ -1,11 +1,15 @@
 import BarChart from "../barChart/barChart.jsx"
 import "./sideChart.scss"
 import loadingIcon from "../../assets/img/load-icon.png"
+import LineChart from "../barChart/lineChart.jsx"
 
-function SideChart({ title, description, url, website, chartData, caption, loadingState, data }) {
+function SideChart({ title, description, url, website, chartData, caption, loadingState, data, bar }) {
   return (
     <>
         <div id="top"></div>
+
+        <h2>{title}</h2>
+
         <div className="chart-graph" >
           {loadingState.loading && (
             <img 
@@ -15,9 +19,21 @@ function SideChart({ title, description, url, website, chartData, caption, loadi
             />
           )}
 
-          {!loadingState.loading && data && data.length>0 ? (
+          {!loadingState.loading && data && data.length>0 && bar ? (
             <>
               <BarChart
+                chartData={chartData}
+              />
+              <span
+                className="caption"
+              >{caption}</span>
+            </>
+          )
+          : null
+          }
+          {!loadingState.loading && data && data.length>0 && !bar ? (
+            <>
+              <LineChart
                 chartData={chartData}
               />
               <span
@@ -39,8 +55,6 @@ function SideChart({ title, description, url, website, chartData, caption, loadi
           : null}
 
         </div>
-
-        <h2>{title}</h2>
 
         <div
           dangerouslySetInnerHTML={{ __html: description}}
