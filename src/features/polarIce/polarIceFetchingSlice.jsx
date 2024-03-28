@@ -4,7 +4,6 @@ import axios from "axios";
 const initialState = {
     loading: false,
     polarIceData: {},
-    polarIceDescription: {},
     error: "",
 };
 
@@ -24,13 +23,11 @@ const polarIceSlice = createSlice({
         .addCase(fetchPolarIce.fulfilled, (state, action) => {
             state.loading = false;
             state.polarIceData = action.payload.data;
-            state.polarIceDescription = action.payload.description;
             state.error = "";
         })
         .addCase(fetchPolarIce.rejected, (state, action) => {
             state.loading = false;
             state.polarIceData = {};
-            state.polarIceDescription = {};
             state.error = action.error.message;
         })
     }

@@ -13,6 +13,8 @@ function N2o() {
     dispatch(fetchN2o())
   }, [])
 
+  console.log(n2o)
+
   const [chartData, setChartData] = useState({
     labels: [],
     dataSets: [{
@@ -29,7 +31,8 @@ function N2o() {
     if (n2o && n2o.length > 0) {
       setChartData({
         labels: n2o.map(n2oData => {
-          return n2oData.date
+          const defDate = n2oData.date.split(".").join("-");
+          return defDate
         }),
         dataSets: [
           {

@@ -29,7 +29,8 @@ function Methane() {
     if (methane && methane.length > 0) {
       setChartData({
         labels: methane.map(methaneData => {
-          return methaneData.date
+          const defDate = methaneData.date.split(".").join("-");
+          return defDate
         }),
         dataSets: [
           {

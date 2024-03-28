@@ -30,7 +30,7 @@ function Co2() {
     if (co2 && co2.length > 0) {
       setChartData({
         labels: co2.map(co2Data => {
-          return `${co2Data.year}.${co2Data.day}.${co2Data.month}`
+          return `${co2Data.year}-${co2Data.day}-${co2Data.month}`
         }),
         dataSets: [
           {

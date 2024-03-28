@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchOceanWarming } from "../features/oceanWarming/oceanWarmingFetchingSlice";
 import { Helmet, HelmetProvider } from "react-helmet-async";
@@ -7,12 +7,66 @@ import SideChart from "../components/sideChart/sideChart";
 function OceanWarming() {
   const oceanWarming = useSelector(state => state.oceanWarming.oceanWarming);
   const dispatch = useDispatch();
+  const loadingState = useSelector(state => state.oceanWarming);
 
   useEffect(() => {
     dispatch(fetchOceanWarming());
   }, [])
-
+  
   console.log(oceanWarming)
+
+  const [chartData, setChartData] = useState({
+    labels: [],
+    dataSets: [{
+      label: "Ocean warming",
+      data: [],
+    }],
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+    }, 
+  });
+
+  const [labelArr, setLabelArr] = useState([]);
+  const [valueArr, setValueArr] = useState([]);
+
+    useEffect(() => {
+    if (oceanWarming && Object.keys(oceanWarming).length > 0) {
+      const newLabelArr = [];
+      const newValueArr = [];
+
+      Object.keys(oceanWarming).forEach(key => {
+        
+        newLabelArr.push(key);
+        newValueArr.push(oceanWarming[key]);
+      });
+
+      setLabelArr(newLabelArr);
+      setValueArr(newValueArr);
+    }
+  }, [oceanWarming]);
+
+  useEffect(() => {
+    if (labelArr.length > 0 && valueArr.length > 0 && labelArr.length === valueArr.length) {
+      setChartData({
+        labels: labelArr,
+        dataSets: [
+          {
+          label: "Ocean warming",
+          data: valueArr,
+          backgroundColor: ["#FFCC01"],
+          },
+      ],
+      });
+    }    
+  }, [labelArr, valueArr])
+
+
+  console.log(labelArr)
+  console.log(valueArr)
+
+
+
 
   return (
     <div>
@@ -39,6 +93,11 @@ function OceanWarming() {
         Addressing the concerning rate of ocean warming requires urgent and concerted global action to reduce greenhouse gas emissions and mitigate climate change. Transitioning to renewable energy sources, implementing sustainable practices in fisheries and coastal development, and enhancing marine conservation efforts are essential steps in safeguarding the health and resilience of our oceans. Furthermore, fostering international cooperation and awareness about the impacts of ocean warming are crucial for mobilizing collective action and implementing effective adaptation strategies."
         url="https://www.noaa.gov/news/2023-was-worlds-warmest-year-on-record-by-far"
         website="www.noaa.gov"
+        chartData={chartData}
+        caption="caption of the graphic"
+        loadingState={loadingState}
+        data={oceanWarming}
+        bar={true}
       />
 
     </div>

@@ -1,20 +1,80 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPolarIce } from "../features/polarIce/polarIceFetchingSlice";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import SideChart from "../components/sideChart/sideChart";
 
 function PolarIce() {
-  const polarIceData = useSelector(state => state.polarIce.polarIceData);
-  const polarIceDescription = useSelector(state => state.polarIce.polarIceDescription);
+  const polarIce = useSelector(state => state.polarIce.polarIceData);
   const dispatch = useDispatch();
+  const loadingState = useSelector(state => state.polarIce);
 
   useEffect(() => {
     dispatch(fetchPolarIce())
   }, [])
 
-  console.log(polarIceData)
-  console.log(polarIceDescription)
+  // console.log(polarIce)
+
+  const [chartData, setChartData] = useState({
+    labels: [],
+    dataSets: [{
+      label: "Polar ice",
+      data: [],
+    }],
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+    }, 
+  });
+
+  const [labelArr, setLabelArr] = useState([]);
+  const [valueArr, setValueArr] = useState([]);
+
+  useEffect(() => {
+    if (polarIce && Object.keys(polarIce).length > 0) {
+      const newLabelArr = [];
+      const newValueArr = [];
+
+      Object.keys(polarIce).forEach(key => {
+        const year = key.split("").slice(0, 4).join("")
+        const month = key.split("").slice(4, 6).join("")
+        
+        newLabelArr.push(`${year}-${month}`);
+        newValueArr.push(polarIce[key]);
+      });
+
+      setLabelArr(newLabelArr);
+      setValueArr(newValueArr);
+    }
+  }, [polarIce]);
+
+  useEffect(() => {
+    if (labelArr.length > 0 && valueArr.length > 0 && labelArr.length === valueArr.length) {
+      setChartData({
+        labels: labelArr,
+        dataSets: [
+          {
+          label: "Polar ice monthly mean",
+          data: valueArr.map(value => value.monthlyMean),
+          backgroundColor: ["#FFCC01"],
+          },
+          // {
+          // label: "Polar ice value",
+          // data: valueArr.map(value => value.value),
+          // backgroundColor: ["#E0B400"],
+          // },
+          // {
+          // label: "Polar ice anomalies",
+          // data: valueArr.map(value => value.anom),
+          // backgroundColor: ["#2CA6A4"],
+          // },
+      ],
+      });
+    }    
+  }, [labelArr, valueArr])
+
+  // console.log(labelArr)
+  // console.log(valueArr)
 
   return (
     <div>
@@ -45,7 +105,7 @@ function PolarIce() {
         caption="caption of the graphic"
         loadingState={loadingState}
         data={polarIce}
-        bar={false}
+        bar={true}
       />
 
     </div>

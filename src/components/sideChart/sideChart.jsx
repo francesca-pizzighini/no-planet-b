@@ -4,6 +4,8 @@ import loadingIcon from "../../assets/img/load-icon.png"
 import LineChart from "../barChart/lineChart.jsx"
 
 function SideChart({ title, description, url, website, chartData, caption, loadingState, data, bar }) {
+  // console.log(chartData, caption, loadingState, data)
+  // console.log(data);
   return (
     <>
         <div id="top"></div>
@@ -19,7 +21,7 @@ function SideChart({ title, description, url, website, chartData, caption, loadi
             />
           )}
 
-          {!loadingState.loading && data && data.length>0 && bar ? (
+          {!loadingState.loading && data && (data.length>0 || Object.keys(data).length > 0 ) && bar ? (
             <>
               <BarChart
                 chartData={chartData}
@@ -31,7 +33,7 @@ function SideChart({ title, description, url, website, chartData, caption, loadi
           )
           : null
           }
-          {!loadingState.loading && data && data.length>0 && !bar ? (
+          {!loadingState.loading && data && (data.length>0 || Object.keys(data).length > 0 ) && !bar ? (
             <>
               <LineChart
                 chartData={chartData}
